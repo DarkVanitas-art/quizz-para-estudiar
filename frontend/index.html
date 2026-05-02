@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quizz Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container" id="app-container">
+        <!-- Header -->
+        <header>
+            <h1>Study<span>Agent</span></h1>
+            <p>Sube tu material para generar el desafío.</p>
+        </header>
+
+        <!-- View 1: Upload -->
+        <main id="view-upload" class="view active-view">
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="file-input" accept=".pdf,.txt,.md,.ppt,.pptx" hidden>
+                <div class="upload-icon">📄</div>
+                <h3>Arrastra tu documento aquí</h3>
+                <p>O haz clic para seleccionar (PDF, TXT, MD, PPTX)</p>
+                <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">Seleccionar Archivo</button>
+            </div>
+            <div id="file-status" class="status-message"></div>
+            <button id="btn-generate" class="btn btn-accent" disabled>Generar Quizz (40-60 pregs)</button>
+        </main>
+
+        <!-- View 2: Loading -->
+        <main id="view-loading" class="view hidden-view" style="display: none;">
+            <div class="loader"></div>
+            <h2>El agente está pensando...</h2>
+            <p>Extrayendo conceptos clave y elaborando el quizz.</p>
+        </main>
+        
+        <!-- View 3: Quizz (Placeholder) -->
+        <main id="view-quizz" class="view hidden-view" style="display: none;">
+            <!-- Renderizado dinámico desde app.js -->
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
